@@ -1,12 +1,27 @@
-module "app_service_vnet" {
-  source                  = "./app_service_vnet"
-  resource_group_name     = var.resource_group_name
-  location                = var.location
-  app_service_name        = var.app_service_name
-  virtual_network         = module.virtual_network.virtual_network_id
-  staging_slot_enabled    = var.staging_slot_enabled
+# Initialize Terraform configuration
+terraform {
+  required_providers {
+    azurerm = {
+      source  = "hashicorp/azurerm"
+      version = ">=2.0"
+    }
+  }
 }
 
-output "app_service_url" {
-  value = module.app_service_vnet.app_service_url
+# Configure Azure provider
+provider "azurerm" {
+  features {}
+}
+
+# Include module declarations for app_service, virtual_network, and staging_slots
+module "app_service" {
+  source = "./app_service"
+}
+
+module "virtual_network" {
+  source = "./virtual_network"
+}
+
+module "staging_slots" {
+  source = "./staging_slots"
 }
