@@ -1,3 +1,8 @@
+variable "subscription" {
+  description = "The name of the subscription."
+  type        = string
+}
+
 variable "location" {
   description = "The Azure region to deploy the resources."
   type        = string
