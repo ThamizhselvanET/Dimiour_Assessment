@@ -1,3 +1,10 @@
+provider "azurerm" {
+  features {}
+  skip_provider_registration = true
+  subscription_id = var.subscription_id
+}
+
+
 resource "azurerm_app_service_plan" "main" {
   name                = var.app_service_plan_name
   location            = var.location
