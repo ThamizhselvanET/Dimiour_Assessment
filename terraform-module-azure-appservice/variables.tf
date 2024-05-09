@@ -24,7 +24,7 @@ variable "app_service_plan_sku_size" {
 }
 
 variable "service_plan.capacity" {
-  description = "The SKU size of the App Service Plan."
+  description = "The Capacity of the App Service Plan."
   type        = string
 }
 
