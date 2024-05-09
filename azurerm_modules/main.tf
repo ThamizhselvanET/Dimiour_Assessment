@@ -11,6 +11,8 @@ terraform {
 # Configure Azure provider
 provider "azurerm" {
   features {}
+  skip_provider_registration = true
+  subscription_id = var.subscription_id
 }
 
 # Include module declarations for app_service, virtual_network, and staging_slots
