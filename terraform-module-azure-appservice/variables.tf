@@ -23,6 +23,11 @@ variable "app_service_plan_sku_size" {
   type        = string
 }
 
+variable "service_plan.capacity" {
+  description = "The SKU size of the App Service Plan."
+  type        = string
+}
+
 variable "virtual_network_name" {
   description = "The name of the Virtual Network."
   type        = string
